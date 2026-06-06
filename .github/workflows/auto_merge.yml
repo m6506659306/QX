@@ -1,9 +1,13 @@
-name: 目标链接全自动合并(保留后缀)
+name: 目标链接全自动合并(保留后缀-修复Node警告)
 
 on:
   workflow_dispatch: # 支持手动点击运行
   schedule:
     - cron: '0 22 * * *' # 每天北京时间早上 6 点自动运行 (UTC 22:00)
+
+# 💡 解决警告的关键：在最顶层强行开启 Node 24
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build_and_merge:
@@ -24,9 +28,9 @@ jobs:
         echo "# ==========================================" >> $OUTPUT_FILE
         
         # 2. 定义你需要合并的目标链接
-        # ⚠️ 注意：每行放一个链接，并在末尾加上反斜杠 \ 顺延
         URLS=( \
           "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list" \
+          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Advertising/Advertising.list" \
           "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list" \
         )
 
@@ -36,10 +40,6 @@ jobs:
           echo "# 正在合并自: $url" >> $OUTPUT_FILE
           echo "# ------------------------------------------" >> $OUTPUT_FILE
           
-          # 核心清洗命令调整：
-          # grep -v '^#'          -> 删掉所有以 # 开头的注释行
-          # grep -v '^\s*$'       -> 删掉所有空行
-          # （已移除末尾删除逻辑，保留完整行）
           curl -s "$url" | grep -v '^#' | grep -v '^\s*$' >> $OUTPUT_FILE
         done
 
