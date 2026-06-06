@@ -1,6 +1,0 @@
-# cn2gia
-anytls=104.194.65.197:443, password=PCB2Z4o12bKUoFa3cC97Hw==, over-tls=true, tls-host=band.tools4fun.win, udp-relay=true, tag=Band
-# cloudflare
-vless=172.64.53.30:443, method=none, password=5cb2b9dc-36fb-4f38-bc23-74b78d234a9a, obfs=wss, obfs-host=ts.tools4fun.win, obfs-uri=/?ed=2048, tls13=true, fast-open=true, udp-relay=false, tag=CFJP
-# oracle
-trojan=172.64.53.30:443, password=PCB2Z4o12bKUoFa3cC97Hw==, obfs=wss, obfs-host=oracle.tools4fun.win, obfs-uri=/funny, tls13=true, udp-relay=true, tag=Oracle
