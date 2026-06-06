@@ -3,28 +3,20 @@ let body = $response.body;
 
 try {
     let obj = JSON.parse(body);
-    
-    // 💡 在这里定义你需要屏蔽的所有模块名称
-    const hideList = ['直播', '消息', '毕业歌会', '新征程'];
-    
+
     if (obj.data) {
-        // 1. 过滤底部导航栏 (bottom)
+        // 1. 过滤底部导航栏 (bottom) 中的“直播”和“消息”
         if (obj.data.bottom) {
-            obj.data.bottom = obj.data.bottom.filter(item => !hideList.includes(item.name));
+            obj.data.bottom = obj.data.bottom.filter(item => item.name !== '直播' && item.name !== '消息');
         }
-        
-        // 2. 过滤顶部导航栏 (tab)
+
+        // 2. 过滤顶部导航栏 (tab) 中的“直播”和“消息”
+        // (有时候 B 站会进行 A/B 测试，把直播放在顶部栏，一并过滤更保险)
         if (obj.data.tab) {
-            obj.data.tab = obj.data.tab.filter(item => !hideList.includes(item.name));
-        }
-        
-        // 3. 过滤顶部导航栏的备用字段 (top) 
-        // B站部分版本的数据结构里顶部栏可能叫 top
-        if (obj.data.top) {
-            obj.data.top = obj.data.top.filter(item => !hideList.includes(item.name));
+            obj.data.tab = obj.data.tab.filter(item => item.name !== '直播' && item.name !== '消息');
         }
     }
-    
+
     // 将修改后的数据重新打包返回给 B 站客户端
     $done({ body: JSON.stringify(obj) });
 } catch (e) {
