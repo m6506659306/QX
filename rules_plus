@@ -1,0 +1,24 @@
+host-suffix, charliemonroe.net, proxy
+host-suffix, tangbai.cc, proxy
+host, www.gstatic.com, StreamMedia
+host-suffix, typora.io, proxy
+host-suffix, clawhub.ai, proxy
+# 苹果推送与系统服务域名
+IP-CIDR, 17.0.0.0/8, direct
+# Blibili优化
+HOST-WILDCARD, mcdn.bilivideo.com, reject
+HOST-SUFFIX, biliapi.net, direct
+HOST-SUFFIX, biliapi.com, direct
+HOST-SUFFIX, bilibili.com, direct
+HOST-SUFFIX, hdslb.com, direct
+HOST-SUFFIX, bilivideo.com, direct
+# --- Homebrew 补全规则 (GFWList 之外) ---
+host-suffix, ghcr.io, proxy
+host-suffix, pkg.github.com, proxy
+host, formulae.brew.sh, proxy
+host-suffix, githubusercontent.com, proxy
+host-suffix, githubassets.com, proxy
+# 代理补足
+host-suffix, emulatorgames.net, proxy
+host-suffix, yts.mx, proxy
+host-suffix, ifixit.com, proxy
