@@ -1,6 +1,6 @@
 # ==========================================
 # 我的定制直连合并规则 (策略组重写为 direct)
-# 更新时间: 2026-06-07 10:04:59 北京时间
+# 更新时间: 2026-06-07 10:05:59 北京时间
 # ==========================================
 
 # ------------------------------------------
@@ -6707,69 +6707,3 @@ IP-CIDR,150.138.137.0/32,direct
 IP-CIDR,150.139.143.0/32,direct
 IP-CIDR,27.159.95.0/32,direct
 IP-CIDR,58.58.81.129/32,direct
-
-# ------------------------------------------
-# 正在合并自: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Steam/Steam.list
-# ------------------------------------------
-HOST,steambroadcast.akamaized.net,direct
-HOST,steamcdn-a.akamaihd.net,direct
-HOST,steamcommunity-a.akamaihd.net,direct
-HOST,steammobile.akamaized.net,direct
-HOST,steampipe.akamaized.net,direct
-HOST,steamstore-a.akamaihd.net,direct
-HOST,steamusercontent-a.akamaihd.net,direct
-HOST,steamuserimages-a.akamaihd.net,direct
-HOST-SUFFIX,cdn-ali.content.steamchina.com,direct
-HOST-SUFFIX,cdn-qc.content.steamchina.com,direct
-HOST-SUFFIX,cdn-ws.content.steamchina.com,direct
-HOST-SUFFIX,csgo.wmsj.cn,direct
-HOST-SUFFIX,dl.steam.clngaa.com,direct
-HOST-SUFFIX,dl.steam.ksyna.com,direct
-HOST-SUFFIX,dota2.wmsj.cn,direct
-HOST-SUFFIX,edge.steam-dns.top.comcast.net,direct
-HOST-SUFFIX,f3b7q2p3.ssl.hwcdn.net,direct
-HOST-SUFFIX,fanatical.com,direct
-HOST-SUFFIX,humblebundle.com,direct
-HOST-SUFFIX,playartifact.com,direct
-HOST-SUFFIX,s.team,direct
-HOST-SUFFIX,st.dl.bscstorage.net,direct
-HOST-SUFFIX,st.dl.eccdnx.com,direct
-HOST-SUFFIX,st.dl.pinyuncloud.com,direct
-HOST-SUFFIX,steam-api.com,direct
-HOST-SUFFIX,steam-chat.com,direct
-HOST-SUFFIX,steam.apac.qtlglb.com,direct
-HOST-SUFFIX,steam.cdn.on.net,direct
-HOST-SUFFIX,steam.cdn.orcon.net.nz,direct
-HOST-SUFFIX,steam.cdn.slingshot.co.nz,direct
-HOST-SUFFIX,steam.cdn.webra.ru,direct
-HOST-SUFFIX,steam.eca.qtlglb.com,direct
-HOST-SUFFIX,steam.naeu.qtlglb.com,direct
-HOST-SUFFIX,steam.ru.qtlglb.com,direct
-HOST-SUFFIX,steam.tv,direct
-HOST-SUFFIX,steambroadcast.akamaized.net,direct
-HOST-SUFFIX,steamcdn-a.akamaihd.net,direct
-HOST-SUFFIX,steamcommunity-a.akamaihd.net,direct
-HOST-SUFFIX,steamcommunity.com,direct
-HOST-SUFFIX,steamcontent.tnkjmec.com,direct
-HOST-SUFFIX,steamdeck.com,direct
-HOST-SUFFIX,steamgames.com,direct
-HOST-SUFFIX,steammobile.akamaized.net,direct
-HOST-SUFFIX,steampipe-kr.akamaized.net,direct
-HOST-SUFFIX,steampipe-partner.akamaized.net,direct
-HOST-SUFFIX,steampipe.akamaized.net,direct
-HOST-SUFFIX,steampowered.com,direct
-HOST-SUFFIX,steampowered.com.8686c.com,direct
-HOST-SUFFIX,steamstat.us,direct
-HOST-SUFFIX,steamstatic.com,direct
-HOST-SUFFIX,steamstatic.com.8686c.com,direct
-HOST-SUFFIX,steamstore-a.akamaihd.net,direct
-HOST-SUFFIX,steamunlocked.net,direct
-HOST-SUFFIX,steamusercontent-a.akamaihd.net,direct
-HOST-SUFFIX,steamuserimages-a.akamaihd.net,direct
-HOST-SUFFIX,steamvideo-a.akamaihd.net,direct
-HOST-SUFFIX,underlords.com,direct
-HOST-SUFFIX,valvesoftware.com,direct
-HOST-SUFFIX,wmsjsteam.com,direct
-HOST-KEYWORD,steambroadcast,direct
-HOST-KEYWORD,steamstore,direct
-HOST-KEYWORD,steamuserimages,direct
