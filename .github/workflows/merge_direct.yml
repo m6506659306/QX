@@ -1,4 +1,4 @@
-name: merge_direct
+name: merge-direct
 
 on:
   workflow_dispatch: # 支持手动点击运行
@@ -17,32 +17,30 @@ jobs:
       with:
         persist-credentials: true
 
-    - name: 读取配置文件并合并直连目标链接
+    - name: 读取配置文件并合并、重写策略组后缀
       run: |
         # 定义输入源与输出目标
         CONFIG_FILE="source_direct.txt"
         OUTPUT_FILE="rules_direct.list"
         
-        echo "==== 开始处理直连规则 ===="
+        echo "==== 开始处理直连规则 (后缀强制重写版) ===="
         
         # 1. 初始化对应的合并文件并写入文件头
         echo "# ==========================================" > $OUTPUT_FILE
-        echo "# 我的定制直连合并规则 ($CONFIG_FILE 自动打包)" >> $OUTPUT_FILE
+        echo "# 我的定制直连合并规则 (策略组重写为 direct)" >> $OUTPUT_FILE
         echo "# 更新时间: $(date -u -d '+8 hours' '+%Y-%m-%d %H:%M:%S') 北京时间" >> $OUTPUT_FILE
         echo "# ==========================================" >> $OUTPUT_FILE
         
-        # 2. 检查对应的配置文件是否存在，如果不存在则报错中断
+        # 2. 检查对应的配置文件是否存在
         if [ ! -f "$CONFIG_FILE" ]; then
           echo "错误：未在仓库根目录找到 $CONFIG_FILE 文件，请先创建它！"
           exit 1
         fi
         
-        # 3. 逐行读取配置文件中的链接并进行合并
+        # 3. 逐行读取配置文件中的链接并进行合并重写
         while IFS= read -r url || [ -n "$url" ]; do
-          # 剔除行尾可能存在的 Windows 换行符 (\r) 并去除首尾空格
           url=$(echo "$url" | tr -d '\r' | xargs)
           
-          # 略过空行和以 # 开头的注释行
           if [ -z "$url" ] || [[ "$url" =~ ^# ]]; then
             continue
           fi
@@ -51,8 +49,11 @@ jobs:
           echo "# 正在合并自: $url" >> $OUTPUT_FILE
           echo "# ------------------------------------------" >> $OUTPUT_FILE
           
-          # 下载并清洗内容（保留后缀）
-          curl -s "$url" | grep -v '^#' | grep -v '^\s*$' >> $OUTPUT_FILE
+          # 核心清洗与重写逻辑：
+          # grep -v '^#'          -> 删掉原作者的头部注释行
+          # grep -v '^\s*$'       -> 删掉空行
+          # sed 's/,[^,]*$/,direct/' -> 【核心】找到每行最后一个逗号及后面的所有字符，强行替换为 ,direct
+          curl -s "$url" | grep -v '^#' | grep -v '^\s*$' | sed 's/,[^,]*$/,direct/' >> $OUTPUT_FILE
         done < "$CONFIG_FILE"
         
         echo "==== 直连规则处理完成，已生成 $OUTPUT_FILE ===="
@@ -62,10 +63,10 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
         
-        # 检查 rules_direct.list 文件是否有变动
+        # 检查 rules_direct.list 文件是否有变动并提交
         if [ -n "$(git status --porcelain rules_direct.list)" ]; then
           git add rules_direct.list
-          git commit -m "自动更新直连合并规则: $(date -u -d '+8 hours' '+%Y-%m-%d %H:%M:%S')"
+          git commit -m "自动更新直连合并规则并重写后缀: $(date -u -d '+8 hours' '+%Y-%m-%d %H:%M:%S')"
           git push origin main
         else
           echo "直连规则内容无变化，跳过本次提交。"
