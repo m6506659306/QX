@@ -1,0 +1,79 @@
+name: merge-rules
+
+on:
+  workflow_dispatch: # 支持手动点击运行
+  schedule:
+    - cron: '0 22 * * *' # 每天北京时间早上 6 点自动运行 (UTC 22:00)
+
+jobs:
+  build_and_merge:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 签出当前仓库代码
+      uses: actions/checkout@main
+      with:
+        persist-credentials: true
+
+    - name: 分类读取配置文件并合并、重写策略组后缀
+      run: |
+        # 定义分类矩阵：配置源文件 -> 输出文件 -> 强制改写的策略名
+        # 格式为 "源文件:输出文件:策略名"
+        CATEGORIES=( \
+          "source_direct.txt:rules_direct.list:direct" \
+          "source_proxy.txt:rules_proxy.list:proxy" \
+        )
+        
+        for item in "${CATEGORIES[@]}"; do
+          # 解构参数
+          CONFIG_FILE=$(echo "$item" | cut -d':' -f1)
+          OUTPUT_FILE=$(echo "$item" | cut -d':' -f2)
+          POLICY_NAME=$(echo "$item" | cut -d':' -f3)
+          
+          echo "==== 开始处理: $CONFIG_FILE -> $OUTPUT_FILE (统一重写为 ,$POLICY_NAME) ===="
+          
+          # 1. 初始化文件并写入文件头
+          echo "# ==========================================" > $OUTPUT_FILE
+          echo "# 我的定制合并规则 ($CONFIG_FILE 自动打包)" >> $OUTPUT_FILE
+          echo "# 策略组已统一重写为: $POLICY_NAME" >> $OUTPUT_FILE
+          echo "# 更新时间: $(date -u -d '+8 hours' '+%Y-%m-%d %H:%M:%S') 北京时间" >> $OUTPUT_FILE
+          echo "# ==========================================" >> $OUTPUT_FILE
+          
+          # 2. 如果配置文件不存在，跳过，不卡死另一条线
+          if [ ! -f "$CONFIG_FILE" ]; then
+            echo "提示：未找到 $CONFIG_FILE 文件，跳过此分类。"
+            continue
+          fi
+          
+          # 3. 逐行读取并清洗、重写内容
+          while IFS= read -r url || [ -n "$url" ]; do
+            url=$(echo "$url" | tr -d '\r' | xargs)
+            
+            if [ -z "$url" ] || [[ "$url" =~ ^# ]]; then
+              continue
+            fi
+            
+            echo -e "\n# ------------------------------------------" >> $OUTPUT_FILE
+            echo "# 正在合并自: $url" >> $OUTPUT_FILE
+            echo "# ------------------------------------------" >> $OUTPUT_FILE
+            
+            # 【核心核心】sed 's/,[^,]*$/,'"$POLICY_NAME"'/'
+            # 动态将原作者的每行末尾策略组强行替换为你指定的 direct 或 proxy
+            curl -s "$url" | grep -v '^#' | grep -v '^\s*$' | sed 's/,[^,]*$/,'"$POLICY_NAME"'/' >> $OUTPUT_FILE
+          done < "$CONFIG_FILE"
+          
+          echo "==== $OUTPUT_FILE 生成完毕 ===="
+        done
+
+    - name: 将新生成的规则文件提交回仓库
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        
+        # 检查是否有任何 list 文件发生变动
+        if [ -n "$(git status --porcelain rules_direct.list rules_proxy.list)" ]; then
+          git add rules_direct.list rules_proxy.list
+          git commit -m "自动更新分类合并规则(重写后缀): $(date -u -d '+8 hours' '+%Y-%m-%d %H:%M:%S')"
+          git push origin main
+        else
+          echo "所有规则内容均无变化，跳过本次提交。"
+        fi
