@@ -1,6 +1,6 @@
 # ==========================================
 # 我的定制直连合并规则 (策略组重写为 direct)
-# 更新时间: 2026-06-07 09:53:00 北京时间
+# 更新时间: 2026-06-07 10:02:06 北京时间
 # ==========================================
 
 # ------------------------------------------
@@ -6707,3 +6707,61 @@ IP-CIDR,150.138.137.0/32,direct
 IP-CIDR,150.139.143.0/32,direct
 IP-CIDR,27.159.95.0/32,direct
 IP-CIDR,58.58.81.129/32,direct
+
+# ------------------------------------------
+# 正在合并自: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Steam/Steam.list
+# ------------------------------------------
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-SUFFIX,direct
+DOMAIN-KEYWORD,direct
+DOMAIN-KEYWORD,direct
+DOMAIN-KEYWORD,direct
