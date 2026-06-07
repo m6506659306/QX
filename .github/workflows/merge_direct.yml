@@ -5,15 +5,12 @@ on:
   schedule:
     - cron: '0 22 * * *' # 每天北京时间早上 6 点自动运行 (UTC 22:00)
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   build_and_merge:
     runs-on: ubuntu-latest
     steps:
     - name: 签出当前仓库代码
-      uses: actions/checkout@v4
+      uses: actions/checkout@v4.2.2 # 💡 升级到官方原生支持 Node 24 的最新小版本
       with:
         persist-credentials: true
 
@@ -49,10 +46,7 @@ jobs:
           echo "# 正在合并自: $url" >> $OUTPUT_FILE
           echo "# ------------------------------------------" >> $OUTPUT_FILE
           
-          # 核心清洗与重写逻辑：
-          # grep -v '^#'          -> 删掉原作者的头部注释行
-          # grep -v '^\s*$'       -> 删掉空行
-          # sed 's/,[^,]*$/,direct/' -> 【核心】找到每行最后一个逗号及后面的所有字符，强行替换为 ,direct
+          # 下载并清洗内容（保留后缀并重写为 ,direct）
           curl -s "$url" | grep -v '^#' | grep -v '^\s*$' | sed 's/,[^,]*$/,direct/' >> $OUTPUT_FILE
         done < "$CONFIG_FILE"
         
