@@ -1,8 +1,3 @@
-host-suffix, charliemonroe.net, proxy
-host-suffix, tangbai.cc, proxy
-host, www.gstatic.com, StreamMedia
-host-suffix, typora.io, proxy
-host-suffix, clawhub.ai, proxy
 # 苹果推送与系统服务域名
 IP-CIDR, 17.0.0.0/8, direct
 # Blibili优化
@@ -22,3 +17,19 @@ host-suffix, githubassets.com, proxy
 host-suffix, emulatorgames.net, proxy
 host-suffix, yts.mx, proxy
 host-suffix, ifixit.com, proxy
+host-suffix, charliemonroe.net, proxy
+host-suffix, tangbai.cc, proxy
+host, www.gstatic.com, StreamMedia
+host-suffix, typora.io, proxy
+host-suffix, clawhub.ai, proxy
+#广告拦截
+host, air-matters.com, reject
+host, ulogs.umengcloud.com, reject
+host, rtb.honchmedia.com, reject
+host, pagead2.googlesyndication.com, reject
+host, googleads.g.doubleclick.net, reject
+host, app-measurement.com, reject
+host-suffix, umeng.com, reject
+host-suffix, umengcloud.com, reject
+host-suffix, doubleclick-cn.net, reject
+host-suffix, doubleclick.net, reject
