@@ -1,7 +1,7 @@
 # ==========================================
 # 我的定制合并规则 (source_direct.txt 自动打包)
 # 策略组已统一重写为: direct
-# 更新时间: 2026-06-13 07:11:57 北京时间
+# 更新时间: 2026-06-14 06:58:50 北京时间
 # ==========================================
 
 # ------------------------------------------
@@ -1574,7 +1574,6 @@ HOST,devimages-cdn.apple.com,direct
 HOST,devstreaming-cdn.apple.com,direct
 HOST,docs-assets.developer.apple.com,direct
 HOST,gspe1-ssl.ls.apple.com,direct
-HOST,hls-svod.itunes.apple.com,direct
 HOST,hls.itunes.apple.com,direct
 HOST,itunes.apple.com,direct
 HOST,js-cdn.music.apple.com,direct
@@ -1600,6 +1599,7 @@ HOST,fmfmobile.icloud.com,direct
 HOST,fmipmobile.icloud.com,direct
 HOST,statici.icloud.com,direct
 HOST,amp-api.fitness.apple.com,direct
+HOST,hls-svod.itunes.apple.com,direct
 HOST,guzzoni.apple.com,direct
 HOST,beta.apple.com,direct
 HOST,www-cdn.icloud.com.akadns.net,direct
@@ -3062,6 +3062,7 @@ HOST-SUFFIX,apple.comscoreresearch.com,direct
 HOST-SUFFIX,appleenews.com,direct
 HOST-SUFFIX,applemusic.berlin,direct
 HOST-SUFFIX,applemusic.co,direct
+HOST-SUFFIX,applemusic.com,direct
 HOST-SUFFIX,applemusic.com.au,direct
 HOST-SUFFIX,applemusic.hamburg,direct
 HOST-SUFFIX,applemusic.wang,direct
@@ -3094,11 +3095,9 @@ HOST-SUFFIX,iphoto.se,direct
 HOST-SUFFIX,iphoto.wang,direct
 HOST-SUFFIX,musickit.net,direct
 HOST-SUFFIX,wwwapplemusic.com,direct
-HOST-SUFFIX,applemusic.com,direct
 HOST-SUFFIX,apple-dns.net,direct
 HOST-SUFFIX,apple.news,direct
 HOST-SUFFIX,appsto.re,direct
-HOST-SUFFIX,cdn-apple.com,direct
 HOST-SUFFIX,digicert.com,direct
 HOST-SUFFIX,apple-cloudkit.com,direct
 HOST-SUFFIX,apple-icloud.cn,direct
@@ -3106,6 +3105,7 @@ HOST-SUFFIX,apple-livephotoskit.com,direct
 HOST-SUFFIX,appleicloud.cn,direct
 HOST-SUFFIX,applemx-icloud.com,direct
 HOST-SUFFIX,apzones.com,direct
+HOST-SUFFIX,cdn-apple.com,direct
 HOST-SUFFIX,icloud-apple.cn,direct
 HOST-SUFFIX,icloud-content.com,direct
 HOST-SUFFIX,icloud-isupport.com,direct
