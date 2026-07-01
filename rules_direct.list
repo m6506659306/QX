@@ -1,7 +1,7 @@
 # ==========================================
 # 我的定制合并规则 (source_direct.txt 自动打包)
 # 策略组已统一重写为: direct
-# 更新时间: 2026-07-01 07:05:41 北京时间
+# 更新时间: 2026-07-02 07:07:55 北京时间
 # ==========================================
 
 # ------------------------------------------
@@ -1332,6 +1332,7 @@ IP6-CIDR,2400:b200::/32,direct
 # 正在合并自: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list
 # ------------------------------------------
 HOST,apps.apple.com,direct
+HOST,itunes.apple.com,direct
 HOST,a1.mzstatic.com,direct
 HOST,a2.mzstatic.com,direct
 HOST,a3.mzstatic.com,direct
@@ -1574,9 +1575,7 @@ HOST,devimages-cdn.apple.com,direct
 HOST,devstreaming-cdn.apple.com,direct
 HOST,docs-assets.developer.apple.com,direct
 HOST,gspe1-ssl.ls.apple.com,direct
-HOST,hls-svod.itunes.apple.com,direct
 HOST,hls.itunes.apple.com,direct
-HOST,itunes.apple.com,direct
 HOST,js-cdn.music.apple.com,direct
 HOST,lookup-api.apple.com,direct
 HOST,mask-api.fe.apple-dns.net,direct
@@ -1600,6 +1599,7 @@ HOST,fmfmobile.icloud.com,direct
 HOST,fmipmobile.icloud.com,direct
 HOST,statici.icloud.com,direct
 HOST,amp-api.fitness.apple.com,direct
+HOST,hls-svod.itunes.apple.com,direct
 HOST,guzzoni.apple.com,direct
 HOST,beta.apple.com,direct
 HOST,www-cdn.icloud.com.akadns.net,direct
@@ -3109,11 +3109,9 @@ HOST-SUFFIX,ukipad.com,direct
 HOST-SUFFIX,wwwipodlounge.com,direct
 HOST-SUFFIX,wwwmacbookair.com,direct
 HOST-SUFFIX,apple.comscoreresearch.com,direct
-HOST-SUFFIX,apple.news,direct
 HOST-SUFFIX,appleenews.com,direct
 HOST-SUFFIX,applemusic.berlin,direct
 HOST-SUFFIX,applemusic.co,direct
-HOST-SUFFIX,applemusic.com,direct
 HOST-SUFFIX,applemusic.com.au,direct
 HOST-SUFFIX,applemusic.hamburg,direct
 HOST-SUFFIX,applemusic.wang,direct
@@ -3146,7 +3144,9 @@ HOST-SUFFIX,iphoto.se,direct
 HOST-SUFFIX,iphoto.wang,direct
 HOST-SUFFIX,musickit.net,direct
 HOST-SUFFIX,wwwapplemusic.com,direct
+HOST-SUFFIX,applemusic.com,direct
 HOST-SUFFIX,apple-dns.net,direct
+HOST-SUFFIX,apple.news,direct
 HOST-SUFFIX,cdn-apple.com,direct
 HOST-SUFFIX,digicert.com,direct
 HOST-SUFFIX,apple-cloudkit.com,direct
