@@ -1,7 +1,7 @@
 # ==========================================
 # 我的定制合并规则 (source_direct.txt 自动打包)
 # 策略组已统一重写为: direct
-# 更新时间: 2026-07-19 06:42:21 北京时间
+# 更新时间: 2026-07-20 06:44:17 北京时间
 # ==========================================
 
 # ------------------------------------------
@@ -1564,6 +1564,7 @@ HOST,audio-ssl.itunes.apple.com,direct
 HOST,audio.itunes.apple.com,direct
 HOST,mvod.itunes.apple.com,direct
 HOST,streamingaudio.itunes.apple.com,direct
+HOST,gspe1-ssl.ls.apple.com,direct
 HOST,news-client-search.apple.com,direct
 HOST,api-glb-sea.smoot.apple.com,direct
 HOST,apple.comscoreresearch.com,direct
@@ -1574,7 +1575,7 @@ HOST,developer.apple.com,direct
 HOST,devimages-cdn.apple.com,direct
 HOST,devstreaming-cdn.apple.com,direct
 HOST,docs-assets.developer.apple.com,direct
-HOST,gspe1-ssl.ls.apple.com,direct
+HOST,hls-svod.itunes.apple.com,direct
 HOST,js-cdn.music.apple.com,direct
 HOST,lookup-api.apple.com,direct
 HOST,mask-api.fe.apple-dns.net,direct
@@ -1599,7 +1600,6 @@ HOST,fmfmobile.icloud.com,direct
 HOST,fmipmobile.icloud.com,direct
 HOST,statici.icloud.com,direct
 HOST,amp-api.fitness.apple.com,direct
-HOST,hls-svod.itunes.apple.com,direct
 HOST,guzzoni.apple.com,direct
 HOST,beta.apple.com,direct
 HOST,www-cdn.icloud.com.akadns.net,direct
@@ -3058,10 +3058,10 @@ HOST-SUFFIX,ukipad.com,direct
 HOST-SUFFIX,wwwipodlounge.com,direct
 HOST-SUFFIX,wwwmacbookair.com,direct
 HOST-SUFFIX,apple.comscoreresearch.com,direct
-HOST-SUFFIX,apple.news,direct
 HOST-SUFFIX,appleenews.com,direct
 HOST-SUFFIX,applemusic.berlin,direct
 HOST-SUFFIX,applemusic.co,direct
+HOST-SUFFIX,applemusic.com,direct
 HOST-SUFFIX,applemusic.com.au,direct
 HOST-SUFFIX,applemusic.hamburg,direct
 HOST-SUFFIX,applemusic.wang,direct
@@ -3094,8 +3094,8 @@ HOST-SUFFIX,iphoto.se,direct
 HOST-SUFFIX,iphoto.wang,direct
 HOST-SUFFIX,musickit.net,direct
 HOST-SUFFIX,wwwapplemusic.com,direct
-HOST-SUFFIX,applemusic.com,direct
 HOST-SUFFIX,apple-dns.net,direct
+HOST-SUFFIX,apple.news,direct
 HOST-SUFFIX,appsto.re,direct
 HOST-SUFFIX,cdn-apple.com,direct
 HOST-SUFFIX,digicert.com,direct
