@@ -22,6 +22,11 @@ host-suffix, tangbai.cc, proxy
 host, www.gstatic.com, StreamMedia
 host-suffix, typora.io, proxy
 host-suffix, clawhub.ai, proxy
+host-suffix, missav.live, StreamMedia
+host-suffix, pornhub.com, StreamMedia
+host-suffix, phncdn.com, StreamMedia
+host, n8n.tools4fun.win, proxy
+ip-cidr, 138.2.225.23/16, StreamMedia
 #广告拦截
 host, air-matters.com, reject
 host, ulogs.umengcloud.com, reject
@@ -33,3 +38,17 @@ host-suffix, umeng.com, reject
 host-suffix, umengcloud.com, reject
 host-suffix, doubleclick-cn.net, reject
 host-suffix, doubleclick.net, reject
+host, tnc3-alisc1.zijieapi.com, reject
+host, webcast-open.douyin.com, reject
+host, vod-license-m.volccdn.com, reject
+host-suffix, myqcloud.com, reject
+host, toblog.ctobsnssdk.com, reject
+host, xlog.jd.com, reject
+host-suffix, pglstatp-toutiao.com, reject
+host, mssdk.volces.com, reject
+host, adsmind.ugdtimg.com, reject
+host, pgdt.ugdtimg.com, reject
+host, pgdt.ugdtimg.com, reject
+host-suffix, pangolin-sdk-toutiao1.com, reject
+host, et.tanx.com, reject
+host, h-adashx4bc.ut.taobao.com, reject
