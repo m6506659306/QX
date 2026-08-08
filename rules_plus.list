@@ -52,3 +52,7 @@ host, pgdt.ugdtimg.com, reject
 host-suffix, pangolin-sdk-toutiao1.com, reject
 host, et.tanx.com, reject
 host, h-adashx4bc.ut.taobao.com, reject
+# 拦截微博启动广告预加载及 SSP 广告 CDN
+host-suffix, uve.weibo.com, reject
+host-suffix, nb-ssp.oss-cn-beijing.aliyuncs.com, reject
+host-suffix, ad.weibo.com, reject
