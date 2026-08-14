@@ -1,7 +1,7 @@
 # ==========================================
 # 我的定制合并规则 (source_proxy.txt 自动打包)
 # 策略组已统一重写为: proxy
-# 更新时间: 2026-08-14 06:34:24 北京时间
+# 更新时间: 2026-08-14 16:03:24 北京时间
 # ==========================================
 
 # ------------------------------------------
@@ -1577,3 +1577,42 @@ IP-CIDR,199.96.56.0/21,proxy
 IP-CIDR,202.160.128.0/22,proxy
 IP-CIDR,209.237.192.0/19,proxy
 IP-CIDR,69.195.160.0/19,proxy
+
+# ------------------------------------------
+# 正在合并自: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OpenAI/OpenAI.list
+# ------------------------------------------
+HOST,browser-intake-datadoghq.com,proxy
+HOST,chat.openai.com.cdn.cloudflare.net,proxy
+HOST,openai-api.arkoselabs.com,proxy
+HOST,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net,proxy
+HOST,openaicomproductionae4b.blob.core.windows.net,proxy
+HOST,production-openaicom-storage.azureedge.net,proxy
+HOST,static.cloudflareinsights.com,proxy
+HOST-SUFFIX,ai.com,proxy
+HOST-SUFFIX,algolia.net,proxy
+HOST-SUFFIX,api.statsig.com,proxy
+HOST-SUFFIX,auth0.com,proxy
+HOST-SUFFIX,chatgpt.com,proxy
+HOST-SUFFIX,chatgpt.livekit.cloud,proxy
+HOST-SUFFIX,client-api.arkoselabs.com,proxy
+HOST-SUFFIX,events.statsigapi.net,proxy
+HOST-SUFFIX,featuregates.org,proxy
+HOST-SUFFIX,host.livekit.cloud,proxy
+HOST-SUFFIX,identrust.com,proxy
+HOST-SUFFIX,intercom.io,proxy
+HOST-SUFFIX,intercomcdn.com,proxy
+HOST-SUFFIX,launchdarkly.com,proxy
+HOST-SUFFIX,oaistatic.com,proxy
+HOST-SUFFIX,oaiusercontent.com,proxy
+HOST-SUFFIX,observeit.net,proxy
+HOST-SUFFIX,openai.com,proxy
+HOST-SUFFIX,openaiapi-site.azureedge.net,proxy
+HOST-SUFFIX,openaicom.imgix.net,proxy
+HOST-SUFFIX,segment.io,proxy
+HOST-SUFFIX,sentry.io,proxy
+HOST-SUFFIX,stripe.com,proxy
+HOST-SUFFIX,turn.livekit.cloud,proxy
+HOST-KEYWORD,openai,proxy
+IP-CIDR,24.199.123.28/32,proxy
+IP-CIDR,64.23.132.171/32,proxy
+IP-ASN,20473,proxy
