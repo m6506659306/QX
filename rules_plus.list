@@ -23,8 +23,11 @@ host, www.gstatic.com, StreamMedia
 host-suffix, typora.io, proxy
 host-suffix, clawhub.ai, proxy
 host-suffix, missav.live, StreamMedia
-host-suffix, pornhub.com, StreamMedia
-host-suffix, phncdn.com, StreamMedia
+# --- Pornhub 补全规则 ---
+host-suffix, pornhub.com, proxy
+host-suffix, pornhubpremium.com, proxy
+host-suffix, phncdn.com, proxy
+host-suffix, phprcdn.com, proxy
 host, n8n.tools4fun.win, proxy
 ip-cidr, 138.2.225.23/16, StreamMedia
 #广告拦截
