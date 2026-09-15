@@ -56,3 +56,6 @@ host, h-adashx4bc.ut.taobao.com, reject
 host-suffix, uve.weibo.com, reject
 host-suffix, nb-ssp.oss-cn-beijing.aliyuncs.com, reject
 host-suffix, ad.weibo.com, reject
+# 12306广告
+HOST-SUFFIX, ad.cdn.glinkmedia.com, REJECT
+HOST-SUFFIX, miaozhen.com, REJECT
